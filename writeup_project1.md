@@ -35,7 +35,9 @@ In order to draw a single line on the left and right lanes, I modified the draw_
 Potential shortcomings are;
 * The assumption used for drawline() that all of lines detected by the Hough transformation are part of either right line or left line is a big assumption and not very robust. Actually in "yellow.mp4", some wrong lines were observed. This is because the alogorhythm tried to draw a line against input line which is not the part of left line or right line.
 
-* Also, the solution is assuming that lanes are divided with lines and does not take curves into consideration. Also the current implementation is weak against noises. For example, when this pipeline was applied to the "extra.mp4", it stopped with buffer overflow. This is because a vertical line with slope 0 was detected as a part of lane line and the algorhythm could not draw a line expanding from top to bottom with that slope.
+* The solution is assuming that lanes are divided with lines and do not take curves into consideration. 
+
+* Also the current implementation is weak against noises. For example, when this pipeline was applied to the "extra.mp4", it stopped with buffer overflow. This is because a vertical line with slope 0 was detected as a part of lane line and the algorhythm could not draw a line expanding from top to bottom with that slope.
 
 ###3. Suggest possible improvements to your pipeline
 
